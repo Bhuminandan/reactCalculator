@@ -14,8 +14,6 @@ function App() {
   function handleCalculation(e) {
     let opration = e.target.textContent;
 
-    console.log(typeof opration);
-
     if (num1 === '') {
       setError('Enter num 1')
       setSuccess('');
@@ -36,8 +34,14 @@ function App() {
     setNum1(Number(num1));
     setNum2(Number(num2));
 
+    calculateResult(Number(num1), Number(num2), opration);
+
     setError('');
     setSuccess("Success");
+
+  }
+
+  function calculateResult(num1, num2, opration) {
 
     switch (opration) {
       case '+':
